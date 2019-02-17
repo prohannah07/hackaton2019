@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang=“en”>
+   <head>
+       <meta charset="utf-8">
+       <meta name=“viewport” content="width=device-width, initial-scale=1.0">
+       <meta http-equiv=“X-UA-Compatible” content=“ie-edge”>
+       <title>Zot DeZtressor - After Home Page</title>
+   <style>
+   body {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,74e4e8+50,46d6db+76,30dee8+100 */
+      background: #ffffff; /* Old browsers */
+      background: -moz-linear-gradient(45deg, #ffffff 0%, #74e4e8 50%, #46d6db 76%, #30dee8 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=‘#ffffff’, endColorstr=‘#30dee8’,GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+   }
+   </style>
+    <link href="{{ url_for('static', filename='css/rant.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/install-button.css') }}" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+     <button id="myButton" class = "myButton">Menu</button>
+
+     <div class="wrapper">
+       <header>
+        <h1 align="center"> Rough day? Spill the tea! </h1>
+       </header>
+
+       <section class="main-controls">
+       <canvas class="visualizer"></canvas>
+       <button class="record">Record</button>
+       <button class="stop">Stop</button>
+
+      </section>
+
+       <section class="sound-clips">
+
+       </section>
+
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+          location.assign("/index/main_menu/");
+
+        };</script>
+       <!-- The following element pulls in the script for the default template functionality -->
+    <script src="{{ url_for('static', filename='scripts/app.js')}}"></script>
+
+         <!-- Below is your custom application script -->
+     <script src="{{ url_for('static', filename='scripts/respond.js')}}"></script>
+
+    <script src="{{ url_for('static', filename='scripts/install.js')}}"></script>
+
+</body>
+</html>

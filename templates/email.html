@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang=“en”>
+   <head>
+       <meta charset="utf-8">
+       <meta name=“viewport” content="width=device-width, initial-scale=1.0">
+       <meta http-equiv=“X-UA-Compatible” content=“ie-edge”>
+        <title>Zot DeZtressor - After Home Page</title>
+
+  <link href="{{ url_for('static', filename='css/email.css') }}" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" href="widgEditor/css/widgEditor.css" />
+   <style type="text/css" media="all">
+    	@import "css/info.css";
+    	@import "css/main.css";
+    	@import "css/widgEditor.css";
+      @import "css/email.css";
+  </style>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+  body,html{
+     height: calc(100% - 2em);
+     margin-left: 100px;
+     margin-right: 100px;
+     font-family: ‘Comfortaa’;
+  }
+
+  body {
+     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,74e4e8+50,46d6db+76,30dee8+100 */
+     background: #ffffff; /* Old browsers */
+     background: -moz-linear-gradient(45deg, #ffffff 0%, #74e4e8 50%, #46d6db 76%, #30dee8 100%); /* FF3.6-15 */
+     background: -webkit-linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* Chrome10-25,Safari5.1-6 */
+     background: linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=‘#ffffff’, endColorstr=‘#30dee8’,GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+    font-family: 'Comfortaa', cursive;
+    text-align: middle;
+    text-shadow: -1px -1px 1px #aaa,
+                 0px 2px 1px rgba(0,0,0,0.5),
+                 2px 2px 3px rgba(0,0,0,0.7),
+                 0px 0px 3px rgba(0,0,0,0.4);
+    margin-top: 0;
+    padding: 1rem 0;
+  }
+  p {
+    font-size: 1rem;
+    font-family: 'Comfortaa', cursive;
+  }
+  textarea {
+    height: calc(100% - 5em);
+    width: calc(100% - 5em);
+    clear: left;
+    margin-left:auto;
+    margin-right:auto;
+    border-top-width: 1px;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 100%;
+   background-color: #FFFFFF;
+   color: #000000;
+  }
+
+  #myButton {
+      display: block;
+      color: #5B93FC;
+      background: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      font-size: 1em;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 50px;
+      margin: 0;
+      margin-left: .5em;
+      margin-right: 0;
+      margin-top: .5em;
+      margin-bottom: 0;
+      width: 5%;
+      border: 2px;
+  }
+
+  #myButton:hover{
+      background-color: #a5b9ff;
+      color: #fff;
+  }
+</style>
+
+  <script src="{{ url_for('static', filename='scripts/widgEditor.js')}}"></script>
+
+   </head>
+
+   <body>
+     <button id="myButton" class="myButton">Menu</button>
+
+     <script type="text/javascript">
+         document.getElementById("myButton").onclick = function () {
+             location.assign("/index/main_menu/");
+         };</script>
+
+
+     <h1 align='middle'> Write future you an email! </h1>
+
+     <textarea id='widgEditor'> Rant away! </textarea>
+
+     <p align='center'> When do you want this to be sent? </p>
+     <div style= "margin-bottom:8%">
+     <form align='center'>
+       E-mail:
+       <input type="email" name="email">
+       Date:
+       <input type='date'>
+       <input type='submit'>
+    </form>
+  </div style>
+   </body>
+</html>

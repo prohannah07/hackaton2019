@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang=“en”>
+   <head>
+       <meta charset="utf-8">
+       <meta name=“viewport” content="width=device-width, initial-scale=1.0">
+       <meta http-equiv=“X-UA-Compatible” content=“ie-edge”>
+        <title>Zot DeZtressor - After Home Page</title>
+
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+body,html{
+  height: calc(100% -2em);
+  margin:0;
+  font-family: 'Comfortaa'
+}
+
+body{
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,74e4e8+50,46d6db+76,30dee8+100 */
+   height: 800px;
+   background: #ffffff; /* Old browsers */
+   background: -moz-linear-gradient(45deg, #ffffff 0%, #74e4e8 50%, #46d6db 76%, #30dee8 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#30dee8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+
+#myButton {
+    display: block;
+    color: #5B93FC;
+    background: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 50px;
+    margin: 0;
+    margin-left: .5em;
+    margin-right: 0;
+    margin-top: .5em;
+    margin-bottom: 0;
+    width: 5%;
+    border: 2px;
+}
+
+#myButton:hover{
+    background-color: #a5b9ff;
+    color: #fff;
+}
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 95%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+<button id="myButton" class="myButton">Menu</button>
+
+
+  <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+          location.assign("/index/main_menu/");
+      };</script>
+
+  <h1 align="center">Remember The Little Things</h1>
+  <p align="center">Plan The Day You Want!</p>
+
+  <div class="row">
+    <div class="column">
+      <input type="text" id="myInput" placeholder="Other Items You'd Like To Add">
+    </div>
+    <div class="column">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+  </div>
+
+
+  <ul id="myUL">
+    <li>Drink Lots of Water</li>
+    <li>Eat Well</li>
+    <li>Connect to the World Outside Your Phone</li>
+    <li>Sleep Well</li>
+    <li>Engage in Human Interaction</li>
+  </ul>
+  <p id="textelement" align="center"></p>
+
+  <script>
+  // Create a "close" button and append it to each list item
+var checklist = document.getElementsByTagName("LI");
+
+for (i = 0; i < checklist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  checklist[i].appendChild(span);
+
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+//var i;
+
+
+
+for (i = 0; i < close.length; i++) {
+
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+
+  }
+}
+
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+var grey_list=[];
+var i=0;
+
+
+
+
+list.addEventListener('click', function(ev) {
+
+
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+    grey_list.push(i++);
+
+  }
+
+}, false);
+
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+
+    }
+
+  }
+
+var length_element = grey_list.length;
+if (true);{
+      document.getElementById("textelement").innerHTML = "YOU GOT THIS!";
+    }
+
+
+}
+
+
+  </script>
+
+</body>
+
+
+</html>

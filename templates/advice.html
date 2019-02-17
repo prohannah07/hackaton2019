@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link rel="stylesheet" href="advice.css">
+        <title>Zot DeZtressor-Advice</title>
+    </head>
+
+    <style>
+      body{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,74e4e8+50,46d6db+76,30dee8+100 */
+
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(45deg, #ffffff 0%, #74e4e8 50%, #46d6db 76%, #30dee8 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, #ffffff 0%,#74e4e8 50%,#46d6db 76%,#30dee8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#30dee8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      #myButton {
+          display: block;
+          color: #5B93FC;
+          background: white;
+          text-decoration: none;
+          padding: 8px 10px;
+          font-size: 1em;
+          text-align: center;
+          font-weight: bold;
+          border-radius: 50px;
+          margin: 0;
+          margin-left: .5em;
+          margin-right: 0;
+          margin-top: .5em;
+          margin-bottom: 0;
+          width: 5%;
+          border: 2px;
+      }
+
+      #myButton:hover{
+          background-color: #a5b9ff;
+          color: #fff;
+      }
+      .button {
+          background: #eb94d0;
+          background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+          background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+          background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+          background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+          background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+          -webkit-border-radius: 15;
+          -moz-border-radius: 15;
+          border-radius: 12px;
+          font-family: Arial;
+          color: #fafafa;
+          font-size: 16px;
+          padding: 14px;
+          text-decoration: none;
+        }
+
+        p {
+          font-family: Georgia;
+          text-align: center;
+          font-size: 18px;
+        }
+
+
+    </style>
+
+    <body>
+
+        <button id = "myButton" class = "myButton">Menu</button>
+
+        <h1 align="center" >Here's a tip!</h1>
+
+        <div style= "margin-top:7%">
+          <p align = "center"> {{ tip }} </p>
+
+        </div style>
+
+        <div style= "margin-top:5%">
+          <div style= "text-align:center">
+            <button id= "anotha-one-button" class = "button">ANOTHA ONE!</button>
+          </div style>
+        </div style>
+
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.assign("/index/main_menu/");
+            };
+
+            document.getElementById("anotha-one-button").onclick = function () {
+                location.reload(); /* another joke */
+            };
+
+        </script>
+
+        <img src= "https://www.gifimage.net/wp-content/uploads/2018/11/pikachu-png-gif-2.gif" alt="HTML tutorial" align="right">
+
+
+
+
+
+    </body>
+
+</html>
